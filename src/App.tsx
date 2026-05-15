@@ -1,11 +1,7 @@
-import { Hero } from './components/Hero.tsx'
+import { Hero } from "./components/Hero";
 
 function App() {
-  return (
-    <>
-      <Hero />
-    </>
-  )
+  return <Hero />;
 }
 
-export default App
+export default App;
