@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { ThemeProvider } from "../context/ThemeContext";
 import { Navbar } from "./organisms/Navbar";
 import { HeroIntro } from "./organisms/HeroIntro";
 import { ExperienceSection } from "./organisms/ExperienceSection";
+import { SkillsSection } from "./organisms/SkillsSection";
+import { ProjectsSection } from "./organisms/ProjectsSection";
+import { GitHubSection } from "./organisms/GitHubSection";
+import { Footer } from "./organisms/Footer";
 
-function HeroContent() {
+export function Hero() {
   const [visible, setVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -27,15 +30,11 @@ function HeroContent() {
       >
         <HeroIntro />
         <ExperienceSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <GitHubSection />
       </main>
+      <Footer />
     </div>
-  );
-}
-
-export function Hero() {
-  return (
-    <ThemeProvider>
-      <HeroContent />
-    </ThemeProvider>
   );
 }

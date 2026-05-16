@@ -1,0 +1,34 @@
+import { SKILLS } from '../../constants/skillsData'
+import { SkillGroup } from '../molecules/SkillGroup'
+
+export function SkillsSection() {
+  let runningIndex = 0
+
+  return (
+    <div id="skills" className="mt-14">
+      {/* Section header */}
+      <div className="flex items-center gap-3 mb-6">
+        <span className="text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-[#aaa] dark:text-[#555550]">
+          Skills
+        </span>
+        <div className="flex-1 h-px bg-[#e0e0d8] dark:bg-[#2a2a28]" />
+      </div>
+
+      {/* 2-column bento grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {SKILLS.map((group) => {
+          const start = runningIndex
+          runningIndex += group.skills.length
+          return (
+            <SkillGroup
+              key={group.category}
+              category={group.category}
+              skills={group.skills}
+              startIndex={start}
+            />
+          )
+        })}
+      </div>
+    </div>
+  )
+}

@@ -4,8 +4,8 @@ import { ExperienceCard } from "../molecules/ExperienceCard";
 import { WORK, EDUCATION, type WorkItem, type EducationItem } from "../../constants/experienceData";
 
 export function ExperienceSection() {
-  const [activeTab, setActiveTab] = useState<"work" | "education">("work");
-  const items: (WorkItem | EducationItem)[] = activeTab === "work" ? WORK : EDUCATION;
+  const [activeTab, setActiveTab] = useState<"experience" | "education">("experience");
+  const items: (WorkItem | EducationItem)[] = activeTab === "experience" ? WORK : EDUCATION;
 
   return (
     <div id="experience" className="mt-4">
