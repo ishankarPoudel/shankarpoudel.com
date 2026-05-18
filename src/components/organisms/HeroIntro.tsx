@@ -5,7 +5,7 @@ export function HeroIntro() {
   return (
     <div className="flex items-start justify-between gap-12 mb-10">
       <div className="flex-1">
-        <h1 className="text-[clamp(2.2rem,5vw,3.2rem)] font-bold leading-[1.1] mb-4 tracking-[-0.02em] text-[#0d0d0d] dark:text-[#f0f0e8]">
+<h1 className="text-[clamp(2.2rem,5vw,3.2rem)] font-bold leading-[1.1] mb-4 tracking-[-0.02em] text-[#0d0d0d] dark:text-[#f0f0e8]">
           hi shankar here. 👋
         </h1>
         <p className="text-base font-semibold text-[#444] dark:text-[#c0c0b0] mb-4 tracking-[0.01em]">
@@ -22,6 +22,19 @@ export function HeroIntro() {
           </span>
           .
         </p>
+
+        <div className="inline-flex items-center gap-2 mt-5 px-3 py-1.5 rounded-full
+          bg-emerald-50 dark:bg-emerald-950/40
+          border border-emerald-200 dark:border-emerald-800/50">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+          </span>
+          <span className="text-[0.72rem] font-semibold text-emerald-700 dark:text-emerald-400 tracking-wide">
+            Open to work
+          </span>
+        </div>
+
         <ActionButtons />
       </div>
       <PhotoPlaceholder />

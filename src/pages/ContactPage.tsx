@@ -21,16 +21,18 @@ export function ContactPage() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (!FORMSPREE_URL) { setStatus('error'); return }
     setStatus('sending')
+    const form = e.currentTarget
     try {
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        body: new FormData(e.currentTarget),
+        body: new FormData(form),
         headers: { Accept: 'application/json' },
       })
       if (res.ok) {
         setStatus('success')
-        e.currentTarget.reset()
+        form.reset()
       } else {
         setStatus('error')
       }

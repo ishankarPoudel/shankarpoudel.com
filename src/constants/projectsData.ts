@@ -5,49 +5,61 @@ export interface Project {
   tech: string[]
   githubUrl?: string
   liveUrl?: string
-  image?: string   // relative path from /src/assets or a URL
+  image?: string
   featured?: boolean
 }
 
 export const PROJECTS: Project[] = [
   {
-    id: 'project-1',
-    title: 'Project Title One',
-    description: 'A short description of what this project does and the problem it solves. Keep it to 1–2 sentences.',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    githubUrl: 'https://github.com/shankar',
+    id: 'ecommerce',
+    title: 'Avisekh Bag Pashal',
+    description:
+      'Full-stack e-commerce platform with JWT auth, Google OAuth, OTP verification, an AI shopping assistant powered by Gemini RAG, and eSewa & Stripe payment integrations.',
+    tech: ['React 19', 'TypeScript', 'Node.js', 'PostgreSQL', 'TypeORM', 'TanStack Query', 'Gemini AI'],
+    githubUrl: 'https://github.com/ishankarPoudel/ecommerce-frontend',
     liveUrl: '',
     image: '',
     featured: true,
   },
   {
-    id: 'project-2',
-    title: 'Project Title Two',
-    description: 'Another project description. What makes it interesting, what challenge it tackles.',
-    tech: ['Next.js', 'MongoDB', 'Docker'],
-    githubUrl: 'https://github.com/shankar',
+    id: 'devhub',
+    title: 'DevHub',
+    description:
+      'Developer-focused social platform. Sign in with GitHub to auto-populate your profile, share posts, join discussions, and chat live with other developers via Socket.IO.',
+    tech: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Socket.IO', 'Express'],
+    githubUrl: 'https://github.com/ishankarPoudel/DevHub',
     liveUrl: '',
     image: '',
     featured: true,
   },
   {
-    id: 'project-3',
-    title: 'Project Title Three',
-    description: 'Brief description of the third project, its purpose and the stack it uses.',
-    tech: ['Python', 'FastAPI', 'React'],
-    githubUrl: 'https://github.com/shankar',
+    id: 'open-source-28',
+    title: 'Open Source – 28 Softwares',
+    description:
+      'Contributed to a production codebase at 28 Softwares, taking ownership of UI/UX improvements and maintaining component consistency across a collaborative multi-developer project.',
+    tech: ['React', 'TypeScript', 'shadcn/ui'],
     liveUrl: '',
     image: '',
     featured: true,
   },
   {
-    id: 'project-4',
-    title: 'Project Title Four',
-    description: 'Description of the fourth project. Add more projects as you grow.',
-    tech: ['Angular', 'Express.js', 'TypeORM'],
-    githubUrl: 'https://github.com/shankar',
+    id: 'rental-platform',
+    title: 'Rental Management Platform',
+    description:
+      'Built during an internship alongside senior mentors — a web application for managing rental listings, bookings, and tenant interactions end-to-end.',
+    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'TypeORM', 'TanStack Query', 'shadcn/ui'],
     liveUrl: '',
     image: '',
+    featured: false,
+  },
+  {
+    id: 'mini-projects',
+    title: 'Mini Projects',
+    description:
+      'A collection of small apps built while learning full-stack development — Weather App, Currency Converter, Quote App, and Confession Note. All source code available on GitHub.',
+    tech: ['React', 'TypeScript', 'REST API'],
+    image: '',
+    featured: false,
   },
 ]
 

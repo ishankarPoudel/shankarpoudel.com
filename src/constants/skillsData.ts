@@ -1,6 +1,7 @@
 export interface SkillGroup {
   category: string;
   skills: string[];
+  badge?: string;
 }
 
 export const SKILLS: SkillGroup[] = [
@@ -19,5 +20,6 @@ export const SKILLS: SkillGroup[] = [
   {
     category: "DevOps",
     skills: ["Docker", "Git", "GitHub Actions", "Linux", "CI/CD"],
+    badge: "Currently Exploring",
   },
 ];

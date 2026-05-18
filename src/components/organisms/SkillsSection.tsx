@@ -25,6 +25,7 @@ export function SkillsSection() {
               category={group.category}
               skills={group.skills}
               startIndex={start}
+              badge={group.badge}
             />
           )
         })}
