@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { SocialIconLink } from "../atoms/SocialIconLink";
 import { SOCIAL_LINKS } from "../../constants/socialLinks";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 
 export function ActionButtons() {
   const { darkMode } = useTheme();

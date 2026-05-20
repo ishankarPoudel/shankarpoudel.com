@@ -1,4 +1,4 @@
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 import { NavLink } from "../atoms/NavLink";
 import { IconButton } from "../atoms/IconButton";
 import { NAV_LINKS } from "../../constants/navLinks";

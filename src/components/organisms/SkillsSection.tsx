@@ -1,9 +1,16 @@
 import { SKILLS } from '../../constants/skillsData'
 import { SkillGroup } from '../molecules/SkillGroup'
 
-export function SkillsSection() {
-  let runningIndex = 0
+const SKILLS_INDEXED = (() => {
+  let i = 0
+  return SKILLS.map((group) => {
+    const start = i
+    i += group.skills.length
+    return { ...group, start }
+  })
+})()
 
+export function SkillsSection() {
   return (
     <div id="skills" className="mt-14">
       {/* Section header */}
@@ -16,19 +23,15 @@ export function SkillsSection() {
 
       {/* 2-column bento grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {SKILLS.map((group) => {
-          const start = runningIndex
-          runningIndex += group.skills.length
-          return (
-            <SkillGroup
-              key={group.category}
-              category={group.category}
-              skills={group.skills}
-              startIndex={start}
-              badge={group.badge}
-            />
-          )
-        })}
+        {SKILLS_INDEXED.map((group) => (
+          <SkillGroup
+            key={group.category}
+            category={group.category}
+            skills={group.skills}
+            startIndex={group.start}
+            badge={group.badge}
+          />
+        ))}
       </div>
     </div>
   )

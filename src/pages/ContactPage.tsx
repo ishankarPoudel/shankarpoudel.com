@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { Navbar } from '../components/organisms/Navbar'
 import { Footer } from '../components/organisms/Footer'
 import { SOCIAL_LINKS } from '../constants/socialLinks'
-import { useTheme } from '../context/ThemeContext'
+import { useTheme } from '../context/useTheme'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
