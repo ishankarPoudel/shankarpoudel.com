@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from '@tanstack/react-router'
 import { Navbar } from '../components/organisms/Navbar'
 import { Footer } from '../components/organisms/Footer'
 import { SOCIAL_LINKS } from '../constants/socialLinks'
@@ -56,7 +56,7 @@ export function ContactPage() {
       <Navbar />
 
       <main
-        className={`max-w-[900px] mx-auto pt-10 px-10 pb-4 transition-all duration-[500ms] ease-in-out ${
+        className={`max-w-[900px] mx-auto pt-8 sm:pt-10 px-4 sm:px-8 md:px-10 pb-8 transition-all duration-[500ms] ease-in-out ${
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
       >
@@ -75,7 +75,7 @@ export function ContactPage() {
         </Link>
 
         {/* Split layout */}
-        <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-12 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8 md:gap-16">
 
           {/* ── Left: info ── */}
           <div className="space-y-6">
@@ -227,6 +227,7 @@ export function ContactPage() {
                 >
                   {status === 'sending' ? 'Sending…' : 'Send Message'}
                 </button>
+    
               </form>
             )}
           </div>

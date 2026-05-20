@@ -1,19 +1,29 @@
-import { Routes, Route } from 'react-router-dom'
+import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router'
 import { ThemeProvider } from './context/ThemeContext'
 import { Hero } from './components/Hero'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { ContactPage } from './pages/ContactPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
-function App() {
-  return (
+const rootRoute = createRootRoute({
+  component: () => (
     <ThemeProvider>
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+      <Outlet />
     </ThemeProvider>
-  )
-}
+  ),
+  notFoundComponent: NotFoundPage,
+})
 
-export default App
+const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: Hero })
+const projectsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/projects', component: ProjectsPage })
+const contactRoute = createRoute({ getParentRoute: () => rootRoute, path: '/contact', component: ContactPage })
+
+const routeTree = rootRoute.addChildren([indexRoute, projectsRoute, contactRoute])
+
+export const router = createRouter({ routeTree })
+
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router
+  }
+}

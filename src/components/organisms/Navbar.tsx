@@ -3,24 +3,22 @@ import { NavLink } from "../atoms/NavLink";
 import { IconButton } from "../atoms/IconButton";
 import { NAV_LINKS } from "../../constants/navLinks";
 
+const PATH_MAP: Record<string, string> = {
+  home: '/',
+  projects: '/projects',
+  contact: '/contact',
+}
+
 export function Navbar() {
   const { darkMode, toggleDarkMode } = useTheme();
   return (
-    <nav className="flex items-center justify-between py-6 px-10 max-w-[900px] mx-auto">
-      <div className="flex gap-8">
+    <nav className="flex items-center justify-between py-4 sm:py-6 px-4 sm:px-8 md:px-10 max-w-[900px] mx-auto">
+      <div className="flex gap-4 sm:gap-8">
         {NAV_LINKS.map((link) => (
-          <NavLink key={link} label={link} href={`#${link}`} />
+          <NavLink key={link} label={link} to={PATH_MAP[link] ?? `/${link}`} />
         ))}
       </div>
       <div className="flex gap-3 items-center">
-        <IconButton ariaLabel="Toggle resume">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-            <rect x="5" y="2" width="14" height="20" rx="2"/>
-            <line x1="9" y1="7" x2="15" y2="7"/>
-            <line x1="9" y1="11" x2="15" y2="11"/>
-            <line x1="9" y1="15" x2="13" y2="15"/>
-          </svg>
-        </IconButton>
         <IconButton onClick={toggleDarkMode} ariaLabel="Toggle theme">
           {darkMode ? (
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">

@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
     description:
       'Full-stack e-commerce platform with JWT auth, Google OAuth, OTP verification, an AI shopping assistant powered by Gemini RAG, and eSewa & Stripe payment integrations.',
     tech: ['React 19', 'TypeScript', 'Node.js', 'PostgreSQL', 'TypeORM', 'TanStack Query', 'Gemini AI'],
-    githubUrl: 'https://github.com/ishankarPoudel/ecommerce-frontend',
+    githubUrl: 'https://github.com/ishankarPoudel/E-commerce--backend',
     liveUrl: '',
     image: '',
     featured: true,
@@ -38,7 +38,8 @@ export const PROJECTS: Project[] = [
     description:
       'Contributed to a production codebase at 28 Softwares, taking ownership of UI/UX improvements and maintaining component consistency across a collaborative multi-developer project.',
     tech: ['React', 'TypeScript', 'shadcn/ui'],
-    liveUrl: '',
+    liveUrl: 'https://28softwares.com',
+    githubUrl: 'https://github.com/28softwares',
     image: '',
     featured: true,
   },
@@ -48,7 +49,7 @@ export const PROJECTS: Project[] = [
     description:
       'Built during an internship alongside senior mentors — a web application for managing rental listings, bookings, and tenant interactions end-to-end.',
     tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'TypeORM', 'TanStack Query', 'shadcn/ui'],
-    liveUrl: '',
+    liveUrl: 'https://rental.28softwares.com',
     image: '',
     featured: false,
   },

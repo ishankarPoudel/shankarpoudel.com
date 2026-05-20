@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from '@tanstack/react-router'
 import { Navbar } from '../components/organisms/Navbar'
 import { Footer } from '../components/organisms/Footer'
 import { ProjectCard } from '../components/molecules/ProjectCard'
@@ -19,7 +19,7 @@ export function ProjectsPage() {
       <Navbar />
 
       <main
-        className={`max-w-[900px] mx-auto pt-10 px-10 pb-20 transition-all duration-[500ms] ease-in-out ${
+        className={`max-w-[900px] mx-auto pt-8 sm:pt-10 px-4 sm:px-8 md:px-10 pb-20 transition-all duration-[500ms] ease-in-out ${
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
       >

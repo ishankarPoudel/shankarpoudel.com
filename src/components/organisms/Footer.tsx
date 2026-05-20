@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@tanstack/react-router'
 import { SOCIAL_LINKS } from '../../constants/socialLinks'
 
 export function Footer() {
@@ -6,7 +6,7 @@ export function Footer() {
 
   return (
     <footer className="mt-20 border-t border-[#e0e0d8] dark:border-[#2a2a28]">
-      <div className="max-w-[900px] mx-auto px-10 py-7 flex items-center justify-between gap-6 flex-wrap">
+      <div className="max-w-[900px] mx-auto px-4 sm:px-8 md:px-10 py-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 sm:gap-6">
 
         {/* Left — name + copy */}
         <div className="space-y-0.5">
@@ -14,12 +14,12 @@ export function Footer() {
             Shankar Poudel
           </p>
           <p className="text-[0.72rem] text-[#aaa] dark:text-[#555550]">
-            © {new Date().getFullYear()} ·Shankar Poudel
+            © {new Date().getFullYear()} · Shankar Poudel
           </p>
         </div>
 
         {/* Right — social icons + nav links + back to top */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap">
           {/* Social icons */}
           <div className="flex items-center gap-3">
             {SOCIAL_LINKS.map((link) => (

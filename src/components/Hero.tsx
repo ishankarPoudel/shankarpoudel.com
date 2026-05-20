@@ -24,7 +24,7 @@ export function Hero() {
       <Navbar />
       <main
         id="home"
-        className={`max-w-[900px] mx-auto pt-12 px-10 pb-16 transition-all duration-[600ms] ease-in-out ${
+        className={`max-w-[900px] mx-auto pt-8 sm:pt-12 px-4 sm:px-8 md:px-10 pb-16 transition-all duration-[600ms] ease-in-out ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >

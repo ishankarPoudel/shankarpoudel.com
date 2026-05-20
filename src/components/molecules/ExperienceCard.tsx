@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card } from "../../ui/shadcn/ui/card";
 import { BulletItem } from "../atoms/BulletItem";
-import type { WorkItem, EducationItem } from "../../constants/experienceData";
+import type { WorkItem, EducationItem, WorkProject } from "../../constants/experienceData";
 
 type Item = WorkItem | EducationItem;
 
@@ -62,11 +62,44 @@ export function ExperienceCard({ item }: ExperienceCardProps) {
           </div>
         </div>
       </div>
-      <ul className="m-0 pl-5">
-        {item.bullets.map((b, j) => (
-          <BulletItem key={j} text={b} />
-        ))}
-      </ul>
+      {"projects" in item && item.projects && item.projects.length > 0 ? (
+        <div className="flex flex-col gap-4">
+          {item.projects.map((project: WorkProject, pi) => (
+            <div key={pi}>
+              {pi > 0 && <div className="h-px bg-[#f0f0ea] dark:bg-[#1e1e1c] mb-4" />}
+              <div className="flex items-center justify-between gap-3 mb-2">
+                <span className="text-[0.75rem] font-semibold text-[#444] dark:text-[#aaa8a0]">
+                  {project.name}
+                </span>
+                <div className="flex flex-wrap gap-1 justify-end">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-1.5 py-[2px] rounded-[4px] text-[0.62rem] font-medium
+                        bg-[#f4f4ef] dark:bg-[#1c1c1a]
+                        text-[#888] dark:text-[#666660]
+                        border border-[#e8e8e0] dark:border-[#2a2a28]"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <ul className="m-0 pl-5">
+                {project.bullets.map((b, j) => (
+                  <BulletItem key={j} text={b} />
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <ul className="m-0 pl-5">
+          {item.bullets.map((b, j) => (
+            <BulletItem key={j} text={b} />
+          ))}
+        </ul>
+      )}
     </Card>
   );
 }

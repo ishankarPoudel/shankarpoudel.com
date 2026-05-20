@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { TabSwitcher } from "../molecules/TabSwitcher";
 import { ExperienceCard } from "../molecules/ExperienceCard";
-import { WORK, EDUCATION, type WorkItem, type EducationItem } from "../../constants/experienceData";
+import { WORK, EDUCATION, ACADEMIC_PROJECTS, type WorkItem, type EducationItem } from "../../constants/experienceData";
 
 export function ExperienceSection() {
   const [activeTab, setActiveTab] = useState<"experience" | "education">("experience");
-  const items: (WorkItem | EducationItem)[] = activeTab === "experience" ? WORK : EDUCATION;
+  const items: (WorkItem | EducationItem)[] =
+    activeTab === "experience" ? [...WORK, ...ACADEMIC_PROJECTS] : EDUCATION;
 
   return (
     <div id="experience" className="mt-4">

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@tanstack/react-router'
 import { FEATURED_PROJECTS } from '../../constants/projectsData'
 import { ProjectCard } from '../molecules/ProjectCard'
 
